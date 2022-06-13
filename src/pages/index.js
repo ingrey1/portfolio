@@ -19,7 +19,7 @@ function HomepageHeader() {
             className="button button--secondary button--lg"
             to="/docs/Docusaurus Projects/docusaurus-intro">
             Click To View Writing Samples
-          </Link>
+          </Link>   
         </div>
       </div>
     </header>
@@ -31,7 +31,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Technical Writing Portfolio">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
