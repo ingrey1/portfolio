@@ -63,6 +63,7 @@ const config = {
             label: 'Technical Writing Samples',
           },
           {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/parable', label: 'A Parable', position: 'left'},
           {
             href: 'https://github.com/ingrey1/portfolio',
             label: 'GitHub',
