@@ -3,4 +3,4 @@ title: Introduction
 id: docusaurus-intro
 ---
 
-stuff
+## An Authoring Tool And Static Site Generator

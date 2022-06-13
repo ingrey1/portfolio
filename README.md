@@ -4,6 +4,8 @@
 
 The purpose of this site is to provide some links to technical writing projects with descriptions of their content.
 
+The live site is available at 
+
 ## Website
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
