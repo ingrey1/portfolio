@@ -4,7 +4,7 @@
 
 The purpose of this site is to provide some links to technical writing projects with descriptions of their content.
 
-The live site is available at 
+The live site is available at https://ingrey1.github.io/portfolio/
 
 ## Website
 
