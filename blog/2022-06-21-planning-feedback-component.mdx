@@ -7,6 +7,7 @@ authors: [jason]
 import TOCInline from '@theme/TOCInline';
 import TextboxFeedbackModel from "@site/src/components/TextboxFeedbackModel"
 import ClickFeedbackModel from "@site/src/components/ClickFeedbackModel"
+import ThanksFeedbackModel from "@site/src/components/ThanksFeedbackModel"
 
 # Planning A Feedback Component
 
@@ -51,4 +52,12 @@ Both models have their strengths. The textbox approach will be more likely to pr
 However, it would be nice if we could leverage the strengths of both approaches for our Feedback component. Fortunately--although a little bit more complicated from an implementation perspective--we can have our Feedback component utilize a hybrid model by introducing three different feedback states/modes. Depending on which state the Feedback component happens to be in, the component will display something different for the user.   
 
 
+| User View                | Component State     | Step # |
+|--------------------------|---------------------|--------|
+| <ClickFeedbackModel />   | **Click Emoji**     | 1      |
+| <TextboxFeedbackModel /> | **Enter Text**      | 2      |
+| <ThanksFeedbackModel />  | **Thank User**      | 3      |
 
+- **When a user views the Feedback box for the first time, they will see the like/neutral/dislike Emojis**
+- **If the user chooses to click an emoji, that data wil lbe saved, and the emoji box will be replaced with the textbox**
+- **If the user chooses to submit a comment, the comment box will be replaced with a "Thank You" message.**
