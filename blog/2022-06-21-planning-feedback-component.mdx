@@ -1,0 +1,60 @@
+---
+slug: planning-feedback-component
+title: Planning A Feedback Component
+authors: [jason]
+---
+
+import TOCInline from '@theme/TOCInline';
+
+# Planning A Feedback Component
+
+<TOCInline toc={toc} />
+
+## Introduction
+
+An important part of improving the quality of online documentation involves soliciting feedback from the primary users of that documentation. One mechanism that can be used to acquire helpful feedback is a feedback component.
+
+By placing a feedback component on each documentation page, it's possible to collect page-level feedback with minimal effort, once the initial component setup is complete.
+
+While the basic concepts behind the feedback component are technology agnostic, the implementation details will vary depending on the tech stack used to generate the online documentation. In this series of blog posts, I will explain how to create a custom React feedback component that can be used in any Docusaurus-generated documentation suite. 
+
+## Feedback Component Design
+
+### Type Of User Feedback Collected
+
+The purpose of the Feedback component is to collect relevant information about the user's experience with a given documentation page. Ideally, we want to know not only that a user had a positive, neutral, or negative experience, but also why that user had the particular experience they did. Let's consider two approaches to capturing user feedback, and then we can evaluate their pros and cons.
+
+- **The Textbox Feedback Model**
+
+  <div style={{display: "inline-block", border: "2px solid black"}}>
+  <textarea id="feedback" name="feedback" rows="10" cols="30" style={{resize: "none", color: "blue", backgroundColor: "cyan"}}>
+   ENTER FEEDBACK HERE
+  </textarea>
+  <br />
+  <center><button type="button" style={{margin: "10px", color: "blue"}}>Submit Feedback</button></center>
+  </div>
+
+  - **Advantages**
+    - Text feedback can provide more detailed insights into user behavior and satisfaction
+    - More likely to receive feedback that is actionable
+  - **Disadvantages**
+    - Users are more likely to provide feedback if they don't have to type anything
+    - Depending on context, volume of feedback may be too low to draw meaningful conclusions
+
+- **The Like/Neutral/Dislike Feedback Model**
+
+  <div style={{display: "inline-block", backgroundColor: "cyan", border: "2px solid black"}}>
+   <p style={{margin: "5px", textAlign: "center", color: "blue"}}><b>Was This Page Helpful?</b></p>
+   <br />
+   <span>
+    <button style={{margin: "10px", color: "blue"}}>Positive</button>
+    <button style={{margin: "10px", color: "blue"}}>Negative</button>
+    <button style={{margin: "10px", color: "blue"}}>Neutral</button>
+   </span>
+  </div>
+
+  - **Advantages**
+    - Low barrier to use: users are more likely to click an emoji than type text
+  - **Disadvantages**
+    - Feedback may have limited use because of a lack of information about why users like or dislike the page 
+
