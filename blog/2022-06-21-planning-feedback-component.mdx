@@ -59,5 +59,7 @@ However, it would be nice if we could leverage the strengths of both approaches 
 | <ThanksFeedbackModel />  | **Thank User**      | 3      |
 
 - **When a user views the Feedback box for the first time, they will see the like/neutral/dislike Emojis**
-- **If the user chooses to click an emoji, that data wil lbe saved, and the emoji box will be replaced with the textbox**
+- **If the user chooses to click an emoji, that data will be saved, and the emoji box will be replaced with the textbox**
 - **If the user chooses to submit a comment, the comment box will be replaced with a "Thank You" message.**
+
+On this approach, the Feedback component shows the "Click Emoji" view first. Why? If the textbox were first, we would lose the user feedback for those who will click something, but not comment. This way, we get all the clickers--and the more motivated commenters will click, and then comment.
