@@ -5,6 +5,8 @@ authors: [jason]
 ---
 
 import TOCInline from '@theme/TOCInline';
+import TextboxFeedbackModel from "@site/src/components/TextboxFeedbackModel"
+import ClickFeedbackModel from "@site/src/components/ClickFeedbackModel"
 
 # Planning A Feedback Component
 
@@ -26,13 +28,7 @@ The purpose of the Feedback component is to collect relevant information about t
 
 - **The Textbox Feedback Model**
 
-  <div style={{display: "inline-block", border: "2px solid black"}}>
-  <textarea id="feedback" name="feedback" rows="10" cols="30" style={{resize: "none", color: "blue", backgroundColor: "cyan"}}>
-   ENTER FEEDBACK HERE
-  </textarea>
-  <br />
-  <center><button type="button" style={{margin: "10px", color: "blue"}}>Submit Feedback</button></center>
-  </div>
+  <TextboxFeedbackModel />
 
   - **Advantages**
     - Text feedback can provide more detailed insights into user behavior and satisfaction
@@ -43,18 +39,16 @@ The purpose of the Feedback component is to collect relevant information about t
 
 - **The Like/Neutral/Dislike Feedback Model**
 
-  <div style={{display: "inline-block", backgroundColor: "cyan", border: "2px solid black"}}>
-   <p style={{margin: "5px", textAlign: "center", color: "blue"}}><b>Was This Page Helpful?</b></p>
-   <br />
-   <span>
-    <button style={{margin: "10px", color: "blue"}}>Positive</button>
-    <button style={{margin: "10px", color: "blue"}}>Negative</button>
-    <button style={{margin: "10px", color: "blue"}}>Neutral</button>
-   </span>
-  </div>
+  <ClickFeedbackModel />
 
   - **Advantages**
     - Low barrier to use: users are more likely to click an emoji than type text
   - **Disadvantages**
     - Feedback may have limited use because of a lack of information about why users like or dislike the page 
+
+Both models have their strengths. The textbox approach will be more likely to provide actionable insights, while the button/emoji approach will generate a larger volume of responses. Depending on the specific context of your documentation project, one of these models may be more suitable than the other.
+
+However, it would be nice if we could leverage the strengths of both approaches for our Feedback component. Fortunately--although a little bit more complicated from an implementation perspective--we can have our Feedback component utilize a hybrid model by introducing three different feedback states/modes. Depending on which state the Feedback component happens to be in, the component will display something different for the user.   
+
+
 
