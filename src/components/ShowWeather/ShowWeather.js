@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import CodeBlock from '@theme/CodeBlock';
+import CodeBlock from "@theme/CodeBlock";
 import styles from "./styles.module.css";
 
 const API_KEY = "";
@@ -21,12 +21,24 @@ const getWeatherUrl = (lat, lon, exclude = []) => {
 export default function ShowWeather() {
   const [weatherData, setWeatherData] = useState(null);
 
-  const handleWeather = (lat, lon, exclude = ['lat', 'lon', 'timezone', 'timezone_offset', 'minutely', 'hourly', 'daily']) => {
+  const handleWeather = (
+    lat,
+    lon,
+    exclude = [
+      "lat",
+      "lon",
+      "timezone",
+      "timezone_offset",
+      "minutely",
+      "hourly",
+      "daily",
+    ]
+  ) => {
     try {
       window
         .fetch(getWeatherUrl(lat, lon, exclude))
         .then((response) => response.json())
-        .then((data) => setWeatherData(JSON.stringify(data.current)));
+        .then((data) => setWeatherData(JSON.stringify(data.current, null, 4)));
     } catch (error) {
       console.log(`Error fetching weather data:\n\n ${error}`);
     }
