@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import CodeBlock from "@theme/CodeBlock";
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import styles from "./styles.module.css";
 
 const BASE_WEATHER_API_URL = "https://api.openweathermap.org/data/3.0/onecall";
@@ -8,15 +8,18 @@ const BASE_WEATHER_API_URL = "https://api.openweathermap.org/data/3.0/onecall";
 const SIMI_VALLEY_LOC = { lat: 34.2694, lon: -118.7815 };
 
 export default function ShowWeather() {
-
-  const {siteConfig} = useDocusaurusContext();
+  const {
+    siteConfig: {
+      customFields: { WEATHER_API_KEY },
+    },
+  } = useDocusaurusContext();
 
   const [weatherData, setWeatherData] = useState(null);
 
   const generateWeatherQueryParamString = (lat, lon, exclude = []) => {
-    return `?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${siteConfig.WEATHER_API_KEY}`;
+    return `?lat=${lat}&lon=${lon}&exclude=${exclude}&appid=${WEATHER_API_KEY}`;
   };
-  
+
   const getWeatherUrl = (lat, lon, exclude = []) => {
     return (
       BASE_WEATHER_API_URL + generateWeatherQueryParamString(lat, lon, exclude)
@@ -47,7 +50,6 @@ export default function ShowWeather() {
   };
 
   useEffect(() => {
-    
     if (!weatherData && window) {
       handleWeather(SIMI_VALLEY_LOC.lat, SIMI_VALLEY_LOC.lon);
     }

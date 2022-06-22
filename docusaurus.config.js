@@ -84,7 +84,7 @@ const config = {
       },
     }),
     customFields: {
-      'API_KEY': process.env.API_KEY,
+      'WEATHER_API_KEY': process.env.WEATHER_API_KEY,
     }
 };
 
