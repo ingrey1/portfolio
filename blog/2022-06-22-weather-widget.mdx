@@ -6,10 +6,13 @@ authors: [jason]
 
 import CodeBlock from "@theme/CodeBlock";
 import ShowWeather from "!!raw-loader!../src/components/ShowWeather/ShowWeather"
+import About from "!!raw-loader!../src/pages/about.mdx"
+
 
 ### ShowWeather React Component
 
 <CodeBlock language="jsx" showLines>{ShowWeather}</CodeBlock>
 
-### Using The ShowWeather Component on My **[About Me](@site/src/pages/about.mdx)** page
+I made this component to demonstrate the feasibility of interacting with a live RESTful API to retrieve data and display it on a site generated via Docusaurus. Now that the ShowWeather component is complete, it can be dropped into any React page or .MDX document to display the weather data for the user. This component-based re-usability is part of what has made React such a popular Javascript framework. If you'd like to check out what using this React component looks like in the context of this Docusaurus portfolio site, review the code for the [About Me](https://raw.githubusercontent.com/ingrey1/portfolio/main/src/pages/about.mdx) [MDX](https://mdxjs.com/docs/what-is-mdx/) page.
+
 

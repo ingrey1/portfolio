@@ -43,7 +43,7 @@ export default function ShowWeather() {
       window
         .fetch(getWeatherUrl(lat, lon, exclude))
         .then((response) => response.json())
-        .then((data) => setWeatherData(JSON.stringify(data.current, null, 4)));
+        .then((data) => setWeatherData(JSON.stringify(data.current, null, 2)));
     } catch (error) {
       console.log(`Error fetching weather data:\n\n ${error}`);
     }
